@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
 
-    @Test
+    /***@Test
     @Description("Add Product to Cart from Product page")
     public void addProductToCartFromProductPage() {
         cartSteps
@@ -13,5 +13,5 @@ public class CartTest extends BaseTest {
                 .openProductByName("Blouse")
                 .addProductToCart(2)
                 .checkNumberOfProductsInCart(2);
-    }
+    }***/
 }
