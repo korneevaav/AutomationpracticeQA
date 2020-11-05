@@ -26,7 +26,7 @@ public class CreateAccountPage extends BasePage {
 
     @Step("Set First Name: {firstName}")
     public CreateAccountPage setFirstName(String firstName) {
-        $(FIRST_NAME_INPUT).sendKeys(firstName);
+        $(FIRST_NAME_INPUT).scrollTo().sendKeys(firstName);
 
         return this;
     }

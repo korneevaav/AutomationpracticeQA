@@ -29,7 +29,7 @@ public class AuthenticationPage extends BasePage {
     @Step("Set Email: {email}")
     public AuthenticationPage setEmail(String email) {
         log.info("Set email: {1}", email);
-        $(EMAIL_INPUT).sendKeys(email);
+        $(EMAIL_INPUT).scrollTo().sendKeys(email);
 
         return this;
     }
