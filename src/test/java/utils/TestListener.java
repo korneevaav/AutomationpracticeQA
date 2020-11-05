@@ -5,11 +5,12 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.util.concurrent.TimeUnit;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @Log4j2
 public class TestListener implements ITestListener {
@@ -28,25 +29,19 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         log.info(String.format("======================================= FAILED TEST %s Duration: %ss ========================================%n", iTestResult.getName(),
                 getExecutionTime(iTestResult)));
-        takeScreenshot(iTestResult);
+        takeScreenshot();
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
         log.info(String.format("======================================== SKIPPING TEST %s ========================================%n", iTestResult.getName()));
-        takeScreenshot(iTestResult);
+        takeScreenshot();
     }
 
 
     @Attachment(value = "Page screenshot", type = "image/png")
-    public byte[] takeScreenshot(ITestResult iTestResult) {
-        ITestContext context = iTestResult.getTestContext();
-
+    public byte[] takeScreenshot() {
         try {
-            if (context.getAttribute("driver") != null) {
-                return ((TakesScreenshot) context.getAttribute("driver")).getScreenshotAs(OutputType.BYTES);
-            } else {
-                return new byte[]{};
-            }
+            return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
         } catch (NoSuchSessionException | IllegalStateException ex) {
             return new byte[]{};
         }
