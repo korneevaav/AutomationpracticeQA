@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ public class ProductPage extends BasePage {
 
     @Step("Get Cart Quantity")
     public int getCartQuantity() {
-        String str = $(CART_QUANTITY_TEXT).text();
+        String str = $(CART_QUANTITY_TEXT).waitUntil(Condition.visible, 5000).text();
         return Integer.parseInt(str);
     }
 
