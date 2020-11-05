@@ -13,11 +13,11 @@ public class AuthenticationPage extends BasePage {
 
     private static final By ERROR_CREATE_LIST = By.xpath("//div[@id='create_account_error']//ol//li");
     private static final By ERROR_LIST = By.xpath("//div[@class='alert alert-danger']");
-    private static final By EMAIL_CREATE_INPUT = By.xpath("//input[@id='email_create']");
-    private static final By CREATE_ACCOUNT_BUTTON = By.xpath("//button[@id='SubmitCreate']");
+    private static final By EMAIL_CREATE_INPUT = By.id("email_create");
+    private static final By CREATE_ACCOUNT_BUTTON = By.id("SubmitCreate");
     private static final By EMAIL_INPUT = By.id("email");
-    private static final By PASSWORD_INPUT = By.xpath("//input[@id='passwd']");
-    private static final By LOGIN_BUTTON = By.xpath("//button[@id='SubmitLogin']");
+    private static final By PASSWORD_INPUT = By.id("passwd");
+    private static final By LOGIN_BUTTON = By.id("SubmitLogin");
 
     @Step("Open page: " + URL)
     public AuthenticationPage openPage() {
