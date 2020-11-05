@@ -13,16 +13,16 @@ public class CreateAccountPage extends BasePage {
     private static final String URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation";
 
     private static final By ERROR_LIST = By.xpath("//div[@class='alert alert-danger']//ol//li");
-    private static final By REGISTER_BUTTON = By.xpath("//button[@id='submitAccount']");
-    private static final By FIRST_NAME_INPUT = By.xpath("//input[@id='customer_firstname']");
-    private static final By LAST_NAME_INPUT = By.xpath("//input[@id='customer_lastname']");
-    private static final By PASSWORD_INPUT = By.xpath("//input[@id='passwd']");
-    private static final By ADDRESS_INPUT = By.xpath("//input[@id='address1']");
-    private static final By CITY_INPUT = By.xpath("//input[@id='city']");
+    private static final By REGISTER_BUTTON = By.id("submitAccount");
+    private static final By FIRST_NAME_INPUT = By.id("customer_firstname");
+    private static final By LAST_NAME_INPUT = By.id("customer_lastname");
+    private static final By PASSWORD_INPUT = By.id("passwd");
+    private static final By ADDRESS_INPUT = By.id("address1");
+    private static final By CITY_INPUT = By.id("city");
     private static final By STATE_SELECT = By.id("id_state");
-    private static final By POSTAL_CODE_INPUT = By.xpath("//input[@id='postcode']");
-    private static final By COUNTRY_SELECT = By.xpath("//select[@id='id_country']");
-    private static final By PHONE_INPUT = By.xpath("//input[@id='phone_mobile']");
+    private static final By POSTAL_CODE_INPUT = By.id("postcode");
+    private static final By COUNTRY_SELECT = By.id("id_country");
+    private static final By PHONE_INPUT = By.id("phone_mobile");
 
     @Step("Set First Name: {firstName}")
     public CreateAccountPage setFirstName(String firstName) {
@@ -63,7 +63,7 @@ public class CreateAccountPage extends BasePage {
     public CreateAccountPage setState(String state) {
         $(STATE_SELECT).click();
 
-        new Select($(STATE_SELECT)).selectByVisibleText("Alabama");
+        new Select($(STATE_SELECT)).selectByVisibleText(state);
 
         return this;
     }

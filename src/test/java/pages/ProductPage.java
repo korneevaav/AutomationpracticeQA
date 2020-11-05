@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 @Log4j2
 public class ProductPage extends BasePage {
     private static final By ADD_TO_CART_BUTTON = By.xpath("//div[@class='box-cart-bottom']//button[@name='Submit']");
-    private static final By CART_QUANTITY_TEXT = By.xpath("//span[@id='layer_cart_product_quantity']");
+    private static final By CART_QUANTITY_TEXT = By.id("layer_cart_product_quantity");
     private static final By QUANTITY_INPUT = By.xpath("//input[@id='quantity_wanted']");
 
     @Step("Click Add to Cart button")
