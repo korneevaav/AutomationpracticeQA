@@ -8,7 +8,7 @@ import utils.data.TestDataGenerator;
 public class SearchTest extends BaseTest {
 
     @DataProvider(name = "Search Texts with Results Number")
-    public Object[][] complexity() {
+    public Object[][] searchResults() {
         return TestDataGenerator.getSearchTextsWithResultsNumber();
     }
 

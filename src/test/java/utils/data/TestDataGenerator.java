@@ -13,7 +13,7 @@ public class TestDataGenerator {
                 .password("1234qwer")
                 .address("Temeryazeva 12")
                 .city("Minsk")
-                .state("14")
+                .state("25")
                 .postalCode("12345")
                 .country("21")
                 .phone("375291111111")

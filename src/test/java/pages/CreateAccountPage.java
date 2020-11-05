@@ -5,7 +5,6 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -20,7 +19,7 @@ public class CreateAccountPage extends BasePage {
     private static final By PASSWORD_INPUT = By.xpath("//input[@id='passwd']");
     private static final By ADDRESS_INPUT = By.xpath("//input[@id='address1']");
     private static final By CITY_INPUT = By.xpath("//input[@id='city']");
-    private static final By STATE_SELECT = By.xpath("//select[@id='id_state']");
+    private static final By STATE_SELECT = By.id("id_state");
     private static final By POSTAL_CODE_INPUT = By.xpath("//input[@id='postcode']");
     private static final By COUNTRY_SELECT = By.xpath("//select[@id='id_country']");
     private static final By PHONE_INPUT = By.xpath("//input[@id='phone_mobile']");
@@ -62,7 +61,9 @@ public class CreateAccountPage extends BasePage {
 
     @Step("Set State: {state}")
     public CreateAccountPage setState(String state) {
-        new Select($(STATE_SELECT)).selectByValue(state);
+        $(STATE_SELECT).click();
+
+        new Select($(STATE_SELECT)).selectByVisibleText("Alabama");
 
         return this;
     }
