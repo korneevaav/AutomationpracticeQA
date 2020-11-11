@@ -16,6 +16,7 @@ public class ProductPage extends BasePage {
     private static final By CART_QUANTITY_TEXT = By.className("ajax_cart_quantity");
     private static final By QUANTITY_INPUT = By.id("quantity_wanted");
     private static final By CLOSE_POP_UP_BUTTON = By.className("cross");
+    private static final By PROCEED_TO_CHECKOUT_BUTTON = By.xpath("//a[@class='btn btn-default button button-medium']");
     private static final By SHOPPING_CART_BLOCK = By.className("shopping_cart");
 
     @Step("Click Add to Cart button")
@@ -63,6 +64,15 @@ public class ProductPage extends BasePage {
         $(CLOSE_POP_UP_BUTTON).click();
 
         log.info("Close pop up window");
+
+        return this;
+    }
+
+    @Step("Click Proceed to checkout button")
+    public ProductPage clickProceedToCheckoutButton() {
+        $(PROCEED_TO_CHECKOUT_BUTTON).waitUntil(Condition.visible, 5000).click();
+
+        log.info("Click Proceed to checkout button");
 
         return this;
     }

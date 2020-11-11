@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import utils.data.TestDataGenerator;
 
 public class SearchTest extends BaseTest {
-
     @DataProvider(name = "Search Texts with Results Number")
     public Object[][] searchResults() {
         return TestDataGenerator.getSearchTextsWithResultsNumber();
@@ -18,8 +17,6 @@ public class SearchTest extends BaseTest {
         searchSteps
                 .openPage()
                 .search(searchText)
-                .validateSearchResultsNumber(searchResultsNumber);
+                .numberOfResultShouldBe(searchResultsNumber);
     }
-
-
 }

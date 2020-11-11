@@ -4,7 +4,6 @@ import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
-
     @Test
     @Description("Add Product to Cart from Product page")
     public void addProductToCartFromProductPage() {

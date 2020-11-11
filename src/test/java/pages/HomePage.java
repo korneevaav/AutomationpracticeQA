@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
 
     private static final By SEARCH_INPUT = By.id("search_query_top");
     private static final By SEARCH_BUTTON = By.xpath("//button[@class='btn btn-default button-search']");
-    private static final By MENU_WOMEN_BUTTON = By.xpath("//div[@id='block_top_menu']//ul//li//a[@title='Women']");
+    private static final By SIGN_IN_BUTTON = By.className("login");
 
     @Step("Open page: " + URL)
     public HomePage openPage() {
@@ -51,12 +51,11 @@ public class HomePage extends BasePage {
         return new SearchResultPage();
     }
 
-    public WomanCatalogPage clickMenuWomenButton() {
-        $(MENU_WOMEN_BUTTON).click();
+    public AuthenticationPage clickSignInButton() {
+        $(SIGN_IN_BUTTON).click();
 
-        log.info("Click Women button");
+        log.info("Click Sign In button");
 
-        return new WomanCatalogPage();
+        return new AuthenticationPage();
     }
-
 }

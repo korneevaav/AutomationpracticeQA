@@ -1,12 +1,10 @@
 package steps;
 
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j2;
 import models.User;
 
 import static org.testng.Assert.assertEquals;
 
-@Log4j2
 public class CreateAccountSteps extends BaseSteps {
     @Step("Open Create Account page")
     public CreateAccountSteps openPage(String email) {
