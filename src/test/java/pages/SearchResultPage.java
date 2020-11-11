@@ -14,6 +14,8 @@ public class SearchResultPage extends BasePage {
     public int getSearchResultsNumber() {
         String searchResultText = $(SEARCH_RESULT_NUMBER_TEXT).text();
 
+        log.info("Number of search results: " + searchResultText);
+
         return Integer.parseInt(searchResultText.trim().substring(0, 1));
     }
 }

@@ -15,7 +15,9 @@ public class AccountPage extends BasePage {
     @Step("Return Heading User Name")
     public String getHeadingUserName() {
         String userName = $(HEADING_USER_NAME_TEXT).text();
-        log.info("User name: {1}", userName);
+
+        log.info("Heading user name: " + userName);
+
         return userName;
     }
 

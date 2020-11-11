@@ -23,13 +23,23 @@ public class CartSteps extends BaseSteps {
     public CartSteps addProductToCart(int productQuantity) {
         productPage
                 .setProductQuantity(productQuantity)
-                .clickAddToCartButton();
+                .clickAddToCartButton()
+                .clickClosePopUpButton();
+
+        return this;
+    }
+
+    @Step("Remove product from Cart")
+    public CartSteps removeProductFromCart() {
+        productPage.clickRemoveProductFromCartButton();
 
         return this;
     }
 
     @Step("Check number of Products added to Cart")
-    public void checkNumberOfProductsInCart(int expCartQuantity) {
+    public CartSteps checkNumberOfProductsInCart(int expCartQuantity) {
         assertEquals(productPage.getCartQuantity(), expCartQuantity);
+
+        return this;
     }
 }

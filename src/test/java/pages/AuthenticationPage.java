@@ -23,43 +23,50 @@ public class AuthenticationPage extends BasePage {
     public AuthenticationPage openPage() {
         open(URL);
 
+        log.info("Open page: " + URL);
+
         return this;
     }
 
     @Step("Set Email: {email}")
     public AuthenticationPage setEmail(String email) {
-        log.info("Set email: {1}", email);
         $(EMAIL_INPUT).scrollTo().sendKeys(email);
+
+        log.info("Set email: " + email);
 
         return this;
     }
 
     @Step("Set Password: {password}")
     public AuthenticationPage setPassword(String password) {
-        log.info("Set password: {1}", password);
         $(PASSWORD_INPUT).sendKeys(password);
+
+        log.info("Set password: " + password);
 
         return this;
     }
 
     @Step("Click Login button")
     public void clickLoginButton() {
-        log.info("Login button clicked");
         $(LOGIN_BUTTON).click();
+
+        log.info("Click Login button");
     }
 
     @Step("Set Email Create: {email}")
     public AuthenticationPage setEmailCreate(String email) {
-        log.info("Set email create: {1}", email);
         $(EMAIL_CREATE_INPUT).sendKeys(email);
+
+        log.info("Set email create: " + email);
 
         return this;
     }
 
     @Step("Click Create an account button")
     public CreateAccountPage clickCreateAccountButton() {
-        log.info("Create an account button clicked");
         $(CREATE_ACCOUNT_BUTTON).click();
+
+        log.info("Click Create an account button");
 
         return new CreateAccountPage();
     }

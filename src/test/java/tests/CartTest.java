@@ -14,4 +14,16 @@ public class CartTest extends BaseTest {
                 .addProductToCart(2)
                 .checkNumberOfProductsInCart(2);
     }
+
+    @Test
+    @Description("Remove previously added Product from Cart")
+    public void removeProductFromCart() {
+        cartSteps
+                .openPage()
+                .openProductByName("Blouse")
+                .addProductToCart(2)
+                .checkNumberOfProductsInCart(2)
+                .removeProductFromCart()
+                .checkNumberOfProductsInCart(0);
+    }
 }
