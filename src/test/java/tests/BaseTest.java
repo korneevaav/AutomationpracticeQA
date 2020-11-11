@@ -15,6 +15,7 @@ public class BaseTest {
     LoginSteps loginSteps;
     SearchSteps searchSteps;
     CartSteps cartSteps;
+    OrderSteps orderSteps;
 
     @BeforeMethod()
     public void setup() {
@@ -24,6 +25,7 @@ public class BaseTest {
         loginSteps = new LoginSteps();
         searchSteps = new SearchSteps();
         cartSteps = new CartSteps();
+        orderSteps = new OrderSteps();
     }
 
     @AfterMethod

@@ -13,7 +13,7 @@ public class TestDataGenerator {
                 .password("1234qwer")
                 .address("Temeryazeva 12")
                 .city("Minsk")
-                .state("Florida")
+                .state("California")
                 .postalCode("12345")
                 .country("21")
                 .phone("375291111111")
@@ -26,6 +26,12 @@ public class TestDataGenerator {
                 .lastName("Korneeva")
                 .email("nastya@gmail.com")
                 .password("1234qwer")
+                .address("Temeryazeva 12")
+                .city("Minsk")
+                .state("California")
+                .postalCode("12345")
+                .country("21")
+                .phone("375291111111")
                 .build();
     }
 

@@ -25,7 +25,7 @@ public class CreateAccountTest extends BaseTest {
         createAccountSteps
                 .openPage("nastya.test@gmail.com")
                 .register()
-                .validateRegistration(8);
+                .numberOfErrorsShouldBe(8);
     }
 
     @Test

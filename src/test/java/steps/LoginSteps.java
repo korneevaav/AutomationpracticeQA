@@ -1,14 +1,12 @@
 package steps;
 
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j2;
 import models.User;
 
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
-@Log4j2
 public class LoginSteps extends BaseSteps {
     @Step("Open Authentication page")
     public LoginSteps openPage() {
