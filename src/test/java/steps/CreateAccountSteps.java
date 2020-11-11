@@ -47,7 +47,7 @@ public class CreateAccountSteps extends BaseSteps {
     }
 
     @Step("Check number of Registration errors")
-    public void validateRegistration(int expNumberOfErrors) {
+    public void numberOfErrorsShouldBe(int expNumberOfErrors) {
         assertEquals(createAccountPage.getNumberOfErrors(), expNumberOfErrors);
     }
 
