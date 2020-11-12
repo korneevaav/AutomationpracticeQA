@@ -2,9 +2,10 @@ package tests;
 
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
+import utils.Retry;
 
 public class CartTest extends BaseTest {
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     @Description("Add Product to Cart from Product page")
     public void addProductToCartFromProductPage() {
         cartSteps
@@ -14,7 +15,7 @@ public class CartTest extends BaseTest {
                 .checkNumberOfProductsInCart(2);
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     @Description("Remove previously added Product from Cart")
     public void removeProductFromCart() {
         cartSteps
