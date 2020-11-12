@@ -3,12 +3,13 @@ package tests;
 import io.qameta.allure.Description;
 import models.User;
 import org.testng.annotations.Test;
+import utils.Retry;
 import utils.data.TestDataGenerator;
 
 public class OrderTest extends BaseTest {
     User registeredUser = TestDataGenerator.getRegisteredUser();
 
-    @Test()
+    @Test(retryAnalyzer = Retry.class)
     @Description("Full scenario of Proceed to checkout")
     public void orderConfirmationAndPayment() {
         orderSteps

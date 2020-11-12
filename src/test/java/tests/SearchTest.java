@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utils.Retry;
 import utils.data.TestDataGenerator;
 
 public class SearchTest extends BaseTest {
@@ -11,7 +12,7 @@ public class SearchTest extends BaseTest {
         return TestDataGenerator.getSearchTextsWithResultsNumber();
     }
 
-    @Test(dataProvider = "Search Texts with Results Number" )
+    @Test(dataProvider = "Search Texts with Results Number", retryAnalyzer = Retry.class)
     @Description("Search by text and check number of Search results")
     public void searchAndCheckResultsNumber(String searchText, int searchResultsNumber) {
         searchSteps
